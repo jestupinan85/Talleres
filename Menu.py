@@ -1,15 +1,15 @@
 def mostrar_menu():
     print("\n===== MENÚ PRINCIPAL =====")
-    print("1. Mostrar números (for)")
-    print("2. Sumar números (while)")
-    print("3. Validar contraseña (do-while)")
+    print("1. Mostrar números")
+    print("2. Sumar números")
+    print("3. Validar contraseña")
     print("4. Salir")
     return int(input("Seleccione una opción: "))
 
 
 def mostrar_numeros(n):
-    for i in range(1, n + 1):
-        print(i)
+    for k in range(1, n + 1):
+        print(k)
 
 
 def sumar_numeros():
