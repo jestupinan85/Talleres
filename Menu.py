@@ -1,27 +1,56 @@
-def menu():
-    print("===== MENÚ =====")
-    print("Opcion 1: Ingresar datos")
-    print("Opcion 2: Mostrar datos")
-    print("Opcion 3: Salir")
-    opcion = int(input("Seleccione una opcion: "))
-    return opcion
+def mostrar_menu():
+    print("\n===== MENÚ PRINCIPAL =====")
+    print("1. Mostrar números (for)")
+    print("2. Sumar números (while)")
+    print("3. Validar contraseña (do-while)")
+    print("4. Salir")
+    return int(input("Seleccione una opción: "))
+
+
+def mostrar_numeros(n):
+    for i in range(1, n + 1):
+        print(i)
+
+
+def sumar_numeros():
+    suma = 0
+    num = -1
+
+    while num != 0:
+        num = int(input("Ingrese un número (0 para terminar): "))
+        suma += num
+
+    return suma
+
+
+def validar_password():
+    password_correcta = "Contraseña"
+
+    while True:
+        password = input("Ingrese la contraseña: ")
+        if password == password_correcta:
+            break
+
+    print("Acceso concedido")
 
 
 opcion = 0
-nombre = ""
-edad = 0
 
-while opcion != 3:
-    opcion = menu()
+while opcion != 4:
+    opcion = mostrar_menu()
 
     if opcion == 1:
-        for k in range(5):
-            nombre = input(f"Ingrese su nombre: {k+1}\n")
-            edad = int(input("Ingrese su edad: "))
+        n = int(input("Ingrese un número: "))
+        mostrar_numeros(n)
+
     elif opcion == 2:
-        print("Su nombre es:", nombre)
-        print("Su edad es:", edad)
+        print("La suma total es:", sumar_numeros())
+
     elif opcion == 3:
+        validar_password()
+
+    elif opcion == 4:
         print("Saliendo del programa...")
+
     else:
-        print("Numero no valido")
+        print("Opción inválida")
